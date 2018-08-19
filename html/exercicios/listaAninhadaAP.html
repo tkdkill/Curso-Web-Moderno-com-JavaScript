@@ -1,0 +1,89 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li id="backend">
+        backend
+            <ul id="ul-1" style="display:none">
+            <li id="app">
+                app
+                <ul id="ul-2" style="display:none">
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li id="config">
+                config
+                <ul id="ul-3" style="display:none">
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+      <li id="frontend">
+        frontend
+            <ul id="ul-4" style="display:none">
+            <li id="public">
+                public
+                <ul id="ul-5" style="display:none">
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    
+
+    function ShowHideLista(NomeId, Valor){
+        valor = document.getElementById(NomeId).style.display;
+        if(valor == "none"){
+            document.getElementById(NomeId).style.display = "block";
+        }else{
+            document.getElementById(NomeId).style.display = "none";
+        }
+    }
+
+     /* Lista backend*/
+    let clique1 = document.getElementById('backend');
+    clique1.onclick = function (e) {
+        e.preventDefault();
+        ShowHideLista('ul-1');
+    }
+    /* Lista app*/
+    let clique2 = document.getElementById('app');
+    clique2.onclick = function (e) {
+        e.preventDefault();
+        ShowHideLista('ul-2');
+    }
+    /* Lista config*/
+    let clique3 = document.getElementById('config');
+    clique3.onclick = function (e) {
+        e.preventDefault();
+        ShowHideLista('ul-3');
+    }
+    /* Lista frontend*/
+    let clique4 = document.getElementById('frontend');
+    //let display = document.getElementById('ul-4').style.display;
+    clique4.onclick = function (e) {
+        e.preventDefault();
+        console.log('lolteste');
+        ShowHideLista('ul-4');        
+    }
+    /* Lista frontend*/
+    let clique5 = document.getElementById('public');
+    //let display = document.getElementById('ul-4').style.display;
+    clique5.onclick = function (e) {
+        e.preventDefault();
+        console.log('lolteste');
+        ShowHideLista('ul-5');
+            
+    }
+
+    
+</script>

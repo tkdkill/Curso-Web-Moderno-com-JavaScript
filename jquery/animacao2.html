@@ -28,6 +28,33 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+        function alteraLargura(valor, duracao, callback) {
+            $('div').animate({width: `+=${valor}`}, duracao, callback)
+        }
+
+        function moverDiagonal(valor, duracao, callback) {
+            $('div').animate({top: `+=${valor}`, left: `+=${valor}`}, duracao, callback)
+        }
+
+        function girar(valor, duracao, callback) {
+            $('div').animate({transform: `+=${valor}`}, {
+                step: function (valor) {
+                    $(this).css('transform', `rotate(${valor}deg)`)
+                },
+                duration: duracao
+            }, 'linear', callback)
+        }
+
+        alteraLargura(300, 100, () => {
+            alteraLargura(-300, 'slow', () => {
+                moverDiagonal(300, 600, () => {
+                    girar(3300, 3000)
+                })
+            })
+        })
+        // moverDiagonal(200, 100, () => {
+        //     moverDiagonal(-200, 'slow')
+        // })
+        // girar(300, 100)
     </script>
 </body>
